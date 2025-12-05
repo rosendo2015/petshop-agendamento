@@ -36,4 +36,18 @@ body {
   p {
     font-family: var(--font-inter-tight);
   }
+  color: var(--content-secondary);
+  background-color: var(--background-primary);
+}
+a {
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  color: var(--content-tertiary);
+  &:hover {
+    text-decoration: underline;
+    color: var(--content-primary);
+  }
 }
