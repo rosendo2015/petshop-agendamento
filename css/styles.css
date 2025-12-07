@@ -5,12 +5,14 @@
 }
 :root {
   --content-primary: #ffffff;
+  --title: #f5f4f5;
   --content-secondary: #98959d;
   --content-tertiary: #666666;
   --content-brand: #9282fa;
 
   --background-primary: #151515;
   --background-secondary: #1e1e1e;
+  --background-logo: #2e2c30;
   --background-tertiary: #23242c;
   --background-highlights: #bdb4fa;
 
@@ -28,16 +30,50 @@
   --font-inter-tight: "Inter Tight", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
+#app {
+  width: 390px;
+  margin-inline: auto;
+}
+.logo {
+  background-color: var(--background-logo);
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 0.75rem 0;
+  margin-bottom: 1.5rem;
+}
 body {
-  h1,
-  h2 {
+  h1 {
     font-family: var(--font-inter);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--title);
+    margin-bottom: 0.5rem;
   }
   p {
     font-family: var(--font-inter-tight);
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  span {
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
   }
   color: var(--content-secondary);
   background-color: var(--background-primary);
+}
+.date-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border-primary);
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 a {
   font-family: var(--font-inter);
