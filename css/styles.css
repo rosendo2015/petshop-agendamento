@@ -150,3 +150,28 @@ footer {
     background-color: var(--background-highlights);
   }
 }
+@media screen and (width > 1200px) {
+  #app {
+    width: 100%;
+    .header-main {
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        margin-bottom: 0;
+      }
+    }
+    .date-container {
+      margin-bottom: 0;
+    }
+    main {
+      margin-inline: auto;
+      width: 700px;
+    }
+    footer {
+      background: none;
+    }
+  }
+}
