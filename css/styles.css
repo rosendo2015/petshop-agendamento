@@ -103,12 +103,20 @@ body {
   }
   .agendamentos {
     padding: 20px 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     .wrapper-info {
+      width: 100%;
       display: flex;
       gap: 12px;
     }
+    .servico {
+      width: 100%;
+    }
   }
   .remover {
+    width: 100%;
     padding: 8px 20px;
     text-align: end;
   }
@@ -167,11 +175,25 @@ footer {
       margin-bottom: 0;
     }
     main {
+      height: 100vh;
+      position: relative;
       margin-inline: auto;
       width: 700px;
     }
+    .agendamentos {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 1rem;
+      .wrapper-info {
+        min-width: fit-content;
+      }
+    }
     footer {
+      position: absolute;
+      width: fit-content;
       background: none;
+      bottom: -50px;
+      right: 0px;
     }
   }
 }
