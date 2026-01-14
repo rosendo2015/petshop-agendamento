@@ -85,6 +85,12 @@ body {
   margin-bottom: 32px;
 }
 .card {
+  h3 {
+    color: var(--content-primary);
+    font-family: var(--font-inter-tight);
+    font-size: 1rem;
+    font-weight: 700;
+  }
   background-color: var(--background-tertiary);
   border-radius: 10px;
   padding-bottom: 20px;
@@ -109,10 +115,24 @@ body {
     .wrapper-info {
       width: 100%;
       display: flex;
-      gap: 12px;
+      gap: 1rem;
+      .horario,
+      .identification span:nth-child(1) {
+        font-size: 0.75rem;
+        color: var(--content-primary);
+      }
+      .identification {
+        width: 12.1785rem;
+      }
+      .identification span:nth-child(2) {
+        font-size: 0.75rem;
+      }
     }
     .servico {
       width: 100%;
+      span {
+        font-size: 0.75rem;
+      }
     }
   }
   .remover {
