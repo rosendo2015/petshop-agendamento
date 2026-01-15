@@ -39,7 +39,7 @@
 
 body {
   color: var(--content-secondary);
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
   header {
     margin-bottom: 9px;
     .logo {
@@ -50,6 +50,7 @@ body {
     }
   }
   main {
+    position: relative;
     padding: 12px 20px;
   }
   h1 {
@@ -157,28 +158,25 @@ a {
     color: var(--content-primary);
   }
 }
-footer {
-  background-color: var(--background-tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 20px;
-  button {
-    border: none;
-    cursor: pointer;
-    color: var(--background-primary);
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    background-color: var(--content-brand);
-    transition: 0.7s;
-  }
-  button:hover {
-    background-color: var(--background-highlights);
-  }
+button {
+  position: absolute;
+  bottom: -2rem;
+  right: 8rem;
+  border: none;
+  cursor: pointer;
+  color: var(--background-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: var(--content-brand);
+  transition: 0.7s;
 }
+button:hover {
+  background-color: var(--background-highlights);
+}
+
 @media screen and (width > 1200px) {
   #app {
     width: 100%;
