@@ -140,17 +140,59 @@
                 </div>
             </div>
         </main>
-        <form action="#">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo quasi recusandae omnis sint, provident
-                commodi maxime possimus aut delectus et explicabo beatae, molestias labore? Quidem eaque reprehenderit
-                deleniti omnis maiores?</p>
-        </form>
-        <button>
-            NOVO AGENDAMENTO
-        </button>
         <footer>
-
+            <button>
+                NOVO AGENDAMENTO
+            </button>
         </footer>
+        <form action="#">
+            <h2>Agende um atendimento</h2>
+            <p>Preencha os dados do cliente para realizar o agendamento:</p>
+            <div class="wrapper-input">
+                <label for="tutor">Nome do tutor</label>
+                <div>
+                    <img src="assets/User.svg" alt="User">
+                    <input type="text" id="tutor">
+                </div>
+            </div>
+            <div class="wrapper-input">
+                <label for="pet">Nome do pet</label>
+                <div>
+                    <img src="assets/Pet-Paw.svg" alt="pet">
+                    <input type="text" id="pet">
+                </div>
+            </div>
+            <div class="wrapper-input">
+                <label for="phone">Telefone</label>
+                <div>
+                    <img src="assets/Phone.svg" alt="phone">
+                    <input type="tel" id="phone">
+                </div>
+            </div>
+            <div class="wrapper-input">
+                <label for="service-description">Descrição do serviço</label>
+                <div>
+                    <textarea id="service-description"></textarea>
+                </div>
+            </div>
+            <div class="">
+                <div class="wrapper-input">
+                    <label for="date">Data</label>
+                    <div>
+                        <img src="assets/Calendar.svg" alt="calendar">
+                        <input type="date" id="date">
+                    </div>
+                </div>
+                <div class="wrapper-input">
+                    <label for="hour">Hora</label>
+                    <div>
+                        <img src="assets/Calendar.svg" alt="calendar">
+                        <input type="time" id="hour">
+                    </div>
+                </div>
+            </div>
+        </form>
+
 
     </div>
     <script src="./js/main.js"></script>

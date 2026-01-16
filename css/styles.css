@@ -50,8 +50,7 @@ body {
     }
   }
   main {
-    position: relative;
-    padding: 12px 20px;
+    padding: 1rem 20px;
   }
   h1 {
     font-family: var(--font-inter);
@@ -158,26 +157,34 @@ a {
     color: var(--content-primary);
   }
 }
-button {
-  position: absolute;
-  bottom: -2rem;
-  right: 8rem;
-  border: none;
-  cursor: pointer;
-  color: var(--background-primary);
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: var(--content-brand);
-  transition: 0.7s;
+footer {
+  background-color: var(--background-tertiary);
+  width: 100%;
+  padding: 2rem 5rem;
+
+  button {
+    margin-inline: auto;
+    border: none;
+    cursor: pointer;
+    color: var(--background-primary);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: var(--content-brand);
+    transition: 0.7s;
+  }
+  button:hover {
+    background-color: var(--background-highlights);
+  }
 }
-button:hover {
-  background-color: var(--background-highlights);
+form {
+  max-width: 21.875rem;
+  margin: 2rem auto;
 }
 
-@media screen and (width > 1200px) {
+@media screen and (width > 1173px) {
   #app {
     width: 100%;
     .header-main {
@@ -194,7 +201,6 @@ button:hover {
       margin-bottom: 0;
     }
     main {
-      height: 100vh;
       position: relative;
       margin-inline: auto;
       width: 700px;
@@ -208,11 +214,17 @@ button:hover {
       }
     }
     footer {
-      position: absolute;
-      width: fit-content;
-      background: none;
-      bottom: -50px;
-      right: 0px;
+      background-color: var(--background-primary);
+      button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    form {
+      max-width: 29.8125rem;
+      margin: 2rem auto;
     }
   }
 }
