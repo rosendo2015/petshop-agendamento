@@ -141,59 +141,59 @@
             </div>
         </main>
         <footer>
-            <button>
+            <button id="openModal">
                 NOVO AGENDAMENTO
             </button>
         </footer>
-        <form action="#">
-            <h2>Agende um atendimento</h2>
-            <p>Preencha os dados do cliente para realizar o agendamento:</p>
-            <div class="wrapper-input">
+        <div id="modal" class="modal">
+            <form action="#" class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Agende um atendimento</h2>
+                <p>Preencha os dados do cliente para realizar o agendamento:</p>
                 <label for="tutor">Nome do tutor</label>
-                <div>
+                <div class="wrapper-input">
                     <img src="assets/User.svg" alt="User">
-                    <input type="text" id="tutor">
+                    <input type="text" id="tutor" placeholder="Nome do tutor">
                 </div>
-            </div>
-            <div class="wrapper-input">
                 <label for="pet">Nome do pet</label>
-                <div>
+                <div class="wrapper-input">
                     <img src="assets/Pet-Paw.svg" alt="pet">
-                    <input type="text" id="pet">
+                    <input type="text" id="pet" placeholder="Nome do pet">
                 </div>
-            </div>
-            <div class="wrapper-input">
                 <label for="phone">Telefone</label>
-                <div>
+                <div class="wrapper-input">
                     <img src="assets/Phone.svg" alt="phone">
-                    <input type="tel" id="phone">
+                    <input type="tel" id="phone" placeholder="(00) 00000-0000">
                 </div>
-            </div>
-            <div class="wrapper-input">
                 <label for="service-description">Descrição do serviço</label>
-                <div>
+                <div class="wrapper-input">
+
                     <textarea id="service-description"></textarea>
+
                 </div>
-            </div>
-            <div class="">
-                <div class="wrapper-input">
-                    <label for="date">Data</label>
+                <div class="flex-1">
                     <div>
-                        <img src="assets/Calendar.svg" alt="calendar">
-                        <input type="date" id="date">
+                        <label for="date">Data</label>
+                        <div class="wrapper-input">
+                            <img src="assets/Calendar.svg" alt="calendar">
+                            <input type="date" id="date">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="hour">Hora</label>
+                        <div class="wrapper-input">
+                            <img src="assets/clock-circle.svg" alt="calendar">
+                            <input type="time" id="hour">
+                        </div>
                     </div>
                 </div>
-                <div class="wrapper-input">
-                    <label for="hour">Hora</label>
-                    <div>
-                        <img src="assets/Calendar.svg" alt="calendar">
-                        <input type="time" id="hour">
-                    </div>
-                </div>
-            </div>
-        </form>
 
+                <button class="btn">
+                    AGENDAR
+                </button>
 
+            </form>
+        </div>
     </div>
     <script src="./js/main.js"></script>
 </body>
