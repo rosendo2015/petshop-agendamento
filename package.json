@@ -1,0 +1,29 @@
+{
+  "name": "api-petshop",
+  "version": "1.0.0",
+  "description": "api para app de agendamento de petshop",
+  "homepage": "https://github.com/rosendo2015/petshop-agendamento#readme",
+  "bugs": {
+    "url": "https://github.com/rosendo2015/petshop-agendamento/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosendo2015/petshop-agendamento.git"
+  },
+  "license": "ISC",
+  "author": "Rosendo Coelho",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack server",
+    "server": "json-server --watch server.json --port 3333"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.21"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
