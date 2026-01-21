@@ -1,21 +1,10 @@
-// Seleciona elementos
-const modal = document.getElementById("modal");
-const btn = document.getElementById("openModal");
-const span = document.querySelector(".close");
+"use strict"
 
-// Abre o modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+import "./libs/dayjs.js";
 
-// Fecha ao clicar no X
-span.onclick = function() {
-  modal.style.display = "none";
-}
+import "./styles/index.css";
 
-// Fecha ao clicar fora do modal
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-}
+import "./modules/form/submit.js";
+import "./modules/form/data-change.js";
+import "./modules/form/cancel.js";
+import "./modules/page-load.js";
