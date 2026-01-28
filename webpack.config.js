@@ -21,6 +21,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'index.html'),
+            scriptLoading: 'module', // <- ESSENCIAL
             favicon: path.resolve(__dirname, 'src', 'assets', 'logo.svg'),
         }),
         new CopyWebpackPlugin({
@@ -40,10 +41,13 @@ module.exports = {
             },
             {
                 test: /\.js$/i,
+                type: 'javascript/auto', // <- ESSENCIAL
+
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        sourceType: 'unambiguous',
                         presets: ['@babel/preset-env'],
                     },
                 },

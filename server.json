@@ -1,1 +1,20 @@
-{}
+{
+  "schedules": [
+    {
+      "id": 1,
+      "tutor": "Fernanda Costa",
+      "pet": "Thor",
+      "phone": "(85) 99999-9999",
+      "service": "Vacinação",
+      "when": "2024-01-10T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "tutor": "João Souza",
+      "pet": "Mel",
+      "phone": "(85) 99999-9999",
+      "service": "Vacinação",
+      "when": "2024-01-10T13:00:00.000Z"
+    }
+  ]
+}
