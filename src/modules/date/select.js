@@ -2,14 +2,8 @@ import { schedulesDay } from "../schedules/load.js";
 
 // Lista de datas disponíveis (pode ser dinâmica futuramente)
 const availableDates = [
-  "2026-01-10",
-  "2026-01-11",
-  "2026-01-12",
-  "2026-01-13",
-  "2026-01-14",
   "2026-01-27",
-  "2024-01-10",
-  "2024-01-11"
+  "2026-01-28"  
 ];
 
 const dateSelector = document.getElementById("date-selector");

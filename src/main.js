@@ -9,3 +9,8 @@ import "./modules/page-load.js";
 import "./modal.js";
 import { setupDateSelector } from "./modules/date/select.js";
 setupDateSelector();
+import { carregarAgendamentos } from "./agendamentos.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  carregarAgendamentos();
+});
