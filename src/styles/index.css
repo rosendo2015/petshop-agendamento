@@ -12,9 +12,257 @@
   --background-primary: #151515;
   --background-secondary: #1e1e1e;
   --background-tertiary: #23242c;
+  --background-logo: #2e2c30;
+  --background-brand: #9282fa;
+  --background-highlights: #bdb4fa;
+
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-brand: #9282fa;
+  --border-divisor: #353339;
+
+  --accent-blue: #027df0;
+  --accent-blue-light: #16487a;
+  --accent-yellow: #f0dc02;
+  --accent-yellow-light: #756e1b;
+  --accent-orange: #f09102;
+  --accent-orange-light: #75501b;
 }
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--background-primary);
   color: var(--content-primary);
+}
+.container {
+  margin-inline: auto;
+  border: 1px solid var(--border-primary);
+  max-width: 24.375rem;
+}
+.logo {
+  border-bottom-right-radius: 1rem;
+  background-color: var(--background-logo);
+  width: 150px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0.56rem;
+}
+main,
+form {
+  padding: 0.75rem 1.25rem;
+}
+
+h2 {
+  color: #f5f4f5;
+
+  /* title */
+  font-family: "Inter Tight";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 133.333% */
+}
+p {
+  color: var(--gray-300, #98959d);
+
+  /* paragraph/medium */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 171.429% */
+}
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+
+  /* label */
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+
+  color: var(--content-primary);
+}
+.input,
+textarea {
+  width: 100%;
+  height: 3rem;
+
+  border: 1px solid var(--border-primary);
+  padding: 0.87rem 0.75rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.input i {
+  margin-right: 0.5rem;
+}
+
+input {
+  flex: 1;
+
+  font-family: var(--font-family, "Inter"), sans-serif;
+
+  font-size: 1rem;
+  color: var(--content-primary);
+  background-color: transparent;
+
+  outline: none;
+  border: none;
+}
+textarea {
+  flex: 1;
+
+  font-family: var(--font-family, "Inter"), sans-serif;
+
+  font-size: 1rem;
+  color: var(--content-primary);
+  background-color: transparent;
+
+  outline: none;
+
+  overflow: hidden;
+}
+.input:focus-within,
+textarea:focus {
+  border: 1.5px solid var(--background-brand);
+}
+textarea {
+  height: 6rem;
+}
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background: url("../assets/arrow-down.svg") no-repeat;
+}
+
+.btn {
+  width: 100%;
+  max-width: object-fit;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--background-brand);
+  border: none;
+  border-radius: 0.5rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--background-primary);
+
+  cursor: pointer;
+}
+main .btn {
+  margin-top: 40px;
+}
+
+form .btn {
+  margin-left: auto; /* empurra o botão para a direita */
+  width: auto; /* ajusta a largura do botão ao conteúdo */
+}
+footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+.btn:hover {
+  background-color: var(--background-highlights);
+}
+.card {
+  background-color: var(--background-secondary);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  .header-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    gap: 0.75rem;
+    align-self: stretch;
+    border-bottom: 1px solid var(--background-logo);
+    span {
+      color: var(--content-secondary, #98959d);
+      text-align: right;
+      /* label/large */
+      font-family: "Inter Tight";
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.5rem; /* 150% */
+    }
+    .periodo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      h3 {
+        color: var(--content-primary, #fff);
+        /* label/large */
+        font-family: "Inter Tight";
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.5rem; /* 150% */
+      }
+    }
+  }
+  .agendamentos {
+    padding: 1.25rem;
+  }
+  .divisor {
+    border-bottom: 1px solid var(--border-divisor);
+  }
+  .wrapper-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .horario span {
+    color: var(--content-primary, #fff);
+    /* label/medium */
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; /* 171.429% */
+  }
+
+  #pet {
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5rem; /* 171.429% */
+  }
+  #tutor {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem; /* 171.429% */
+    color: var(--content-tertiary);
+  }
+  .servico {
+    span {
+      color: var(--content-tertiary);
+    }
+  }
+  .remover {
+    cursor: pointer;
+    text-align: right;
+    a {
+      color: var(--content-tertiary, #666);
+      text-align: center;
+
+      /* paragraph/small */
+      font-family: Inter;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1rem; /* 133.333% */
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--content-primary);
+      text-decoration: underline;
+    }
+  }
 }
