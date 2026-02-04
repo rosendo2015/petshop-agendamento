@@ -1,0 +1,19 @@
+{
+  "name": "petshop-agendamento",
+  "version": "1.0.0",
+  "description": "app de agendamento para petshop",
+  "author": "Rosendo",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack server",
+    "server": "json-server --watch server.json --port 3333"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-alpha.21"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
