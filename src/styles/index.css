@@ -245,6 +245,7 @@ footer {
       color: var(--content-tertiary);
     }
   }
+
   .remover {
     cursor: pointer;
     text-align: right;
@@ -265,4 +266,84 @@ footer {
       text-decoration: underline;
     }
   }
+}
+
+/* campo de data: seta nativa substituída */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background: url("../assets/arrow-down.svg") no-repeat center;
+  background-size: contain;
+}
+
+/* campo de hora: estilização do select */
+select {
+  flex: 1;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--content-primary);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2rem; /* espaço para a seta */
+}
+
+/* seta customizada só no container do campo de hora */
+.input.hour {
+  position: relative;
+}
+
+.input.hour::after {
+  content: "";
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url("../assets/arrow-down.svg") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+/* opções do dropdown */
+.input select option {
+  background: var(--background-secondary);
+  color: var(--content-primary);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* hover nas opções */
+.input select option:hover {
+  background: var(--background-tertiary);
+}
+.modal {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro */
+}
+
+.modal-content {
+  background-color: var(--background-secondary);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <title>Agendamento PetShop</title>
 </head>
@@ -17,58 +17,62 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="./src/assets/logo.svg" alt="logo">
+                <img src="./src/assets/logo.svg" alt="logo" />
             </div>
         </header>
         <main>
             <div class="header-main">
                 <div>
                     <h2>Sua agenda</h2>
-                    <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+                    <p>
+                        Aqui você pode ver todos os clientes e serviços agendados para
+                        hoje.
+                    </p>
                 </div>
                 <div class="input">
-                    <i><img src="./src/assets/calendar.svg" alt="calendar"></i>
-                    <input id="date-selector" type="date" value="24/01/2026">
+                    <i><img src="./src/assets/calendar.svg" alt="calendar" /></i>
+                    <input id="date-selector" type="date" />
                 </div>
             </div>
             <div class="card">
                 <div class="header-cards">
                     <div class="periodo">
-                        <img src="./src/assets/sun-fog.svg" alt="sun-fog">
+                        <img src="./src/assets/sun-fog.svg" alt="sun-fog" />
                         <h3>Manhã</h3>
                     </div>
-                    <span>09h-12h</span>
+                    <span>08h-12h</span>
                 </div>
-
-                <div class="agendamentos">
-                    <div class="wrapper-info">
-                        <div class="horario"><span>9:00</span></div>
-                        <div class="identification">
-                            <span id="pet">Thor</span>
-                            <span>/</span>
-                            <span id="tutor">Fernanda Costa</span>
-                        </div>
-                    </div>
-                    <div class="servico">
-                        <span>Vacinação</span>
-                    </div>
-                    <div class="remover">
-                        <a href="#">Remover agendamento</a>
-                    </div>
-                </div>
-
+                <!--
+    <div class="agendamentos">
+        <div class="wrapper-info">
+            <div class="horario"><span>9:00</span></div>
+            <div class="identification">
+                <span id="pet">Thor</span>
+                <span>/</span>
+                <span id="tutor">Fernanda Costa</span>
+            </div>
+        </div>
+        <div class="servico">
+            <span>Vacinação</span>
+        </div>
+        <div class="remover">
+            <a href="#">Remover agendamento</a>
+        </div>
+    </div>
+    
+    -->
 
                 <ul id="period-morning" class="period"></ul>
-
             </div>
             <div class="card">
                 <div class="header-cards">
                     <div class="periodo">
-                        <img src="./src/assets/cloud-sun.svg" alt="cloud-sun">
+                        <img src="./src/assets/cloud-sun.svg" alt="cloud-sun" />
                         <h3>Tarde</h3>
                     </div>
                     <span>13h-18h</span>
                 </div>
+                <!--
                 <div class="agendamentos divisor">
                     <div class="wrapper-info">
                         <div class="horario"><span>9:00</span></div>
@@ -84,8 +88,8 @@
                     <div class="remover ">
                         <a href="#">Remover agendamento</a>
                     </div>
-                </div>
-                <div class="agendamentos divisor">
+                    </div>
+                    <div class="agendamentos divisor">
                     <div class="wrapper-info">
                         <div class="horario"><span>9:00</span></div>
                         <div class="identification">
@@ -100,8 +104,8 @@
                     <div class="remover ">
                         <a href="#">Remover agendamento</a>
                     </div>
-                </div>
-                <div class="agendamentos">
+                    </div>
+                    <div class="agendamentos">
                     <div class="wrapper-info">
                         <div class="horario"><span>9:00</span></div>
                         <div class="identification">
@@ -117,19 +121,21 @@
                         <a href="#">Remover agendamento</a>
                     </div>
                 </div>
+                -->
                 <ul id="period-afternoon" class="period"></ul>
             </div>
             <div class="card">
                 <div class="header-cards">
                     <div class="periodo">
-                        <img src="./src/assets/moon-stars.svg" alt="moon-stars">
+                        <img src="./src/assets/moon-stars.svg" alt="moon-stars" />
                         <h3>Noite</h3>
                     </div>
-                    <span>19h-21h</span>
+                    <span>19h-22h</span>
                 </div>
-                <div class="agendamentos">
-                    <div class="wrapper-info">
-                        <div class="horario"><span>9:00</span></div>
+                <!--
+                    <div class="agendamentos">
+                        <div class="wrapper-info">
+                            <div class="horario"><span>9:00</span></div>
                         <div class="identification">
                             <span id="pet">Max</span>
                             <span>/</span>
@@ -143,11 +149,10 @@
                         <a href="#">Remover agendamento</a>
                     </div>
                 </div>
+                -->
                 <ul id="period-night" class="period"></ul>
             </div>
-            <button class="btn" id="openModal">
-                NOVO AGENDAMENTO
-            </button>
+            <button class="btn" id="openModal">NOVO AGENDAMENTO</button>
         </main>
         <div id="modal" class="modal">
             <form action="#" class="modal-content">
@@ -156,51 +161,46 @@
                 <p>Preencha os dados do cliente para realizar o agendamento:</p>
                 <label for="tutor">Nome do tutor</label>
                 <div class="input">
-                    <i><img src="./src/assets/user.svg" alt="User"></i>
-                    <input type="text" id="tutor" placeholder="Nome do tutor">
+                    <i><img src="./src/assets/user.svg" alt="User" /></i>
+                    <input type="text" id="tutor" name="tutor" placeholder="Nome do tutor" />
                 </div>
                 <label for="pet">Nome do pet</label>
                 <div class="input">
-                    <i><img src="./src/assets/pet-paw.svg" alt="pet-paw"></i>
-                    <input type="text" id="pet" placeholder="Nome do pet">
+                    <i><img src="./src/assets/pet-paw.svg" alt="pet-paw" /></i>
+                    <input type="text" id="pet" name="pet" placeholder="Nome do pet" />
                 </div>
                 <label for="phone">Telefone</label>
                 <div class="input">
-                    <i><img src="./src/assets/phone.svg" alt="phone"></i>
-                    <input type="tel" id="phone" placeholder="(00) 00000-0000">
+                    <i><img src="./src/assets/phone.svg" alt="phone" /></i>
+                    <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" />
                 </div>
                 <label for="service-description">Descrição do serviço</label>
 
-
                 <textarea class="" id="service-description"></textarea>
-
 
                 <div class="flex-1">
                     <div>
                         <label for="date">Data</label>
                         <div class="input">
-                            <i><img src="./src/assets/calendar.svg" alt="calendar"></i>
-                            <input type="date" id="date">
+                            <i><img src="./src/assets/calendar.svg" alt="calendar" /></i>
+                            <input type="date" id="date" name="date" />
                         </div>
                     </div>
                     <div>
                         <label for="hour">Hora</label>
-                        <div class="input">
-                            <i><img src="./src/assets/clock-circle.svg" alt="oclock-circle"></i>
-                            <input type="time" id="hour">
+                        <div class="input hour">
+                            <i><img src="./src/assets/clock-circle.svg" alt="oclock-circle" /></i>
+                            <select id="hour" name="hora"></select>
                         </div>
                     </div>
                 </div>
                 <footer>
-                    <button style="text-align: right;" class="btn">
-                        AGENDAR
-                    </button>
+                    <button style="text-align: right" class="btn">AGENDAR</button>
                 </footer>
             </form>
         </div>
     </div>
-    <script src="./src/modal.js"></script>
-
+    <script src="./src/util/modal.js"></script>
 </body>
 
 </html>
