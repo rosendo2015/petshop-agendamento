@@ -145,15 +145,6 @@
       "servico": "Consulta"
     },
     {
-      "id": "a029",
-      "data": "2026-02-10",
-      "hora": "12:00",
-      "tutor": "Renata",
-      "pet": "Lulu",
-      "telefone": "(85) 969110099",
-      "servico": "Vacina"
-    },
-    {
       "id": "a030",
       "data": "2026-02-10",
       "hora": "12:30",
@@ -368,6 +359,15 @@
       "pet": "Louf",
       "telefone": "(85)986029769",
       "servico": "Banho e Vermifugação"
+    },
+    {
+      "id": "b5e2",
+      "data": "2026-02-09",
+      "hora": "21:00",
+      "tutor": "Raimundinho",
+      "pet": "Baleia",
+      "telefone": "(85)98723732",
+      "servico": "Banho, Tosa e Dentista"
     }
   ]
 }
