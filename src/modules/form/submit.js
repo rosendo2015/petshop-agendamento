@@ -5,15 +5,17 @@ const selectHour = document.querySelector(".modal-content #hour");
 const inputDateModal = document.querySelector(".modal-content #date");
 const inputDateSelector = document.getElementById("date-selector");
 const formAgendamento = document.querySelector(".modal-content");
-const dateSelector = document.getElementById("date-selector")
+const dateSelector = document.getElementById("date-selector");
 
-dateSelector.value = dayjs(new Date()).format('YYYY-MM-DD')
-inputDateModal.value = dayjs(new Date()).format('YYYY-MM-DD')
-inputDateModal.min = dayjs(new Date()).format('YYYY-MM-DD')
+dateSelector.value = dayjs(new Date()).format("YYYY-MM-DD");
+inputDateModal.value = dayjs(new Date()).format("YYYY-MM-DD");
+inputDateModal.min = dayjs(new Date()).format("YYYY-MM-DD");
 
 // Buscar agendamentos da API
 async function buscarAgendamentos(dataSelecionada) {
-  const response = await fetch(`http://localhost:3333/schedules?data=${dataSelecionada}`);
+  const response = await fetch(
+    `http://localhost:3333/schedules?data=${dataSelecionada}`,
+  );
   const agendamentos = await response.json();
   return agendamentos;
 }
@@ -21,8 +23,14 @@ async function buscarAgendamentos(dataSelecionada) {
 // Atualizar horários disponíveis (apenas no modal)
 async function atualizarHorarios(dataSelecionada) {
   const agendamentos = await buscarAgendamentos(dataSelecionada);
-  const ocupados = agendamentos.map(a => a.hora);
-  const horariosDisponiveis = gerarHorarios("08:00", "22:00", 30, ocupados);
+  const ocupados = agendamentos.map((a) => a.hora);
+  const horariosDisponiveis = gerarHorarios(
+    "08:00",
+    "22:00",
+    30,
+    ocupados,
+    dataSelecionada,
+  );
 
   selectHour.innerHTML = "";
 
@@ -34,7 +42,7 @@ async function atualizarHorarios(dataSelecionada) {
     return;
   }
 
-  horariosDisponiveis.forEach(hora => {
+  horariosDisponiveis.forEach((hora) => {
     const option = document.createElement("option");
     option.value = hora;
     option.textContent = hora;
@@ -47,47 +55,73 @@ async function atualizarCards(dataSelecionada) {
   const agendamentos = await buscarAgendamentos(dataSelecionada);
 
   // limpa os ULs
-  document.getElementById("period-morning").innerHTML = "";
-  document.getElementById("period-afternoon").innerHTML = "";
-  document.getElementById("period-night").innerHTML = "";
+  const morning = document.getElementById("period-morning");
+  const afternoon = document.getElementById("period-afternoon");
+  const night = document.getElementById("period-night");
 
-  agendamentos.forEach(a => {
-    const li = document.createElement("li");
-    li.classList.add("agendamentos");
-    li.innerHTML = `
-      <div class="wrapper-info">
-        <div class="horario"><span>${a.hora}</span></div>
-        <div class="identification">
-          <span class="pet">${a.pet}</span>
-          <span>/</span>
-          <span class="tutor">${a.tutor}</span>
-        </div>
-      </div>
-      <div class="servico">
-        <span>${a.servico}</span>
-      </div>
-      <div class="remover">
-        <a href="#" data-id="${a.id}">Remover agendamento</a>
-      </div>
-    `;
+  morning.innerHTML = "";
+  afternoon.innerHTML = "";
+  night.innerHTML = "";
 
-    const horaNum = parseInt(a.hora.split(":")[0], 10);
-    if (horaNum >= 8 && horaNum < 12) {
-      document.getElementById("period-morning").appendChild(li);
-    } else if (horaNum >= 13 && horaNum < 18) {
-      document.getElementById("period-afternoon").appendChild(li);
-    } else if (horaNum >= 19 && horaNum <= 22) {
-      document.getElementById("period-night").appendChild(li);
-    }
+  // separa por período
+  const periodMorning = agendamentos.filter((a) => {
+    const h = parseInt(a.hora.split(":")[0], 10);
+    return h >= 8 && h < 13;
   });
-}
 
+  const periodAfternoon = agendamentos.filter((a) => {
+    const h = parseInt(a.hora.split(":")[0], 10);
+    return h >= 13 && h < 18;
+  });
+
+  const periodNight = agendamentos.filter((a) => {
+    const h = parseInt(a.hora.split(":")[0], 10);
+    return h >= 18 && h <= 22;
+  });
+
+  // função auxiliar para renderizar com separador
+  function renderPeriod(list, container) {
+    list.forEach((a, index) => {
+      const li = document.createElement("li");
+      li.classList.add("agendamentos");
+      li.innerHTML = `
+        <div class="wrapper-info">
+          <div class="horario"><span>${a.hora}</span></div>
+          <div class="identification">
+            <span class="pet">${a.pet || "Sem nome"}</span>
+            <span>/</span>
+            <span class="tutor">${a.tutor || "Sem tutor"}</span>
+          </div>
+        </div>
+        <div class="servico">
+          <span>${a.servico || "Serviço não informado"}</span>
+        </div>
+        <div class="remover">
+          <a href="#" data-id="${a.id}">Remover agendamento</a>
+        </div>
+      `;
+
+      container.appendChild(li);
+
+      // adiciona separador se houver mais de um e não for o último
+      if (list.length > 1 && index < list.length - 1) {
+        const divisor = document.createElement("div");
+        divisor.classList.add("divisor");
+        container.appendChild(divisor);
+      }
+    });
+  }
+
+  renderPeriod(periodMorning, morning);
+  renderPeriod(periodAfternoon, afternoon);
+  renderPeriod(periodNight, night);
+}
 // Eventos
-inputDateModal.addEventListener("change", e => {
+inputDateModal.addEventListener("change", (e) => {
   atualizarHorarios(e.target.value);
 });
 
-inputDateSelector.addEventListener("change", e => {
+inputDateSelector.addEventListener("change", (e) => {
   atualizarCards(e.target.value);
 });
 
@@ -100,15 +134,12 @@ async function salvarAgendamento(dados) {
   await fetch("http://localhost:3333/schedules", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(dados)
+    body: JSON.stringify(dados),
   });
 }
 
-
-
-
 // Captura envio do formulário
-formAgendamento.addEventListener("submit", async e => {
+formAgendamento.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const tutorInput = formAgendamento.querySelector("#tutor");
@@ -135,7 +166,7 @@ formAgendamento.addEventListener("submit", async e => {
     tutor: tutorInput.value,
     pet: petInput.value,
     telefone: phoneInput.value,
-    servico: serviceInput.value
+    servico: serviceInput.value,
   };
 
   await salvarAgendamento(novoAgendamento);
@@ -151,7 +182,7 @@ formAgendamento.addEventListener("submit", async e => {
 
 async function removerAgendamento(id, dataSelecionada) {
   await fetch(`http://localhost:3333/schedules/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
   });
 
   // Atualiza os cards e horários depois da remoção
@@ -159,7 +190,7 @@ async function removerAgendamento(id, dataSelecionada) {
   atualizarHorarios(dataSelecionada);
 }
 
-document.addEventListener("click", e => {
+document.addEventListener("click", (e) => {
   if (e.target.matches(".remover a")) {
     e.preventDefault();
     const id = e.target.getAttribute("data-id");
