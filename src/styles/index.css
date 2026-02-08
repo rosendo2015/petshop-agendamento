@@ -350,3 +350,44 @@ select {
 ul li {
   list-style: none;
 }
+
+@media screen and (width > 85.375rem) {
+  .container {
+    max-width: 85.375rem;
+    border: none;
+  }
+  main,
+  form {
+    margin-inline: auto;
+    padding-inline: 5rem;
+    width: 50rem;
+  }
+  .header-main {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 0.75rem;
+      line-height: 1.5rem; /* 171.429% */
+    }
+    .input {
+      width: 30%;
+    }
+  }
+  .agendamentos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .identification {
+      width: 12.1875rem;
+    }
+  }
+  main {
+    position: relative;
+  }
+
+  main footer {
+    position: absolute;
+    bottom: 2rem;
+    right: -14rem;
+  }
+}

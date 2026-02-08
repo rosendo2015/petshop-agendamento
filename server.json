@@ -1,15 +1,6 @@
 {
   "schedules": [
     {
-      "id": "835e",
-      "data": "2026-02-08",
-      "hora": "11:00",
-      "tutor": "Vanessa",
-      "pet": "Alfredo",
-      "telefone": "85986029769",
-      "servico": "Banho e tosa"
-    },
-    {
       "id": "f930",
       "data": "2026-02-08",
       "hora": "14:30",
@@ -46,60 +37,6 @@
       "servico": "Banho"
     },
     {
-      "id": "a004",
-      "data": "2026-02-08",
-      "hora": "09:30",
-      "tutor": "João",
-      "pet": "Thor",
-      "telefone": "(85) 986778899",
-      "servico": "Consulta"
-    },
-    {
-      "id": "a005",
-      "data": "2026-02-08",
-      "hora": "10:00",
-      "tutor": "Ana",
-      "pet": "Mel",
-      "telefone": "(85) 985667788",
-      "servico": "Vacina"
-    },
-    {
-      "id": "a006",
-      "data": "2026-02-08",
-      "hora": "10:30",
-      "tutor": "Paulo",
-      "pet": "Rex",
-      "telefone": "(85) 984556677",
-      "servico": "Banho"
-    },
-    {
-      "id": "a007",
-      "data": "2026-02-08",
-      "hora": "11:00",
-      "tutor": "Clara",
-      "pet": "Nina",
-      "telefone": "(85) 983445566",
-      "servico": "Tosa"
-    },
-    {
-      "id": "a009",
-      "data": "2026-02-08",
-      "hora": "12:00",
-      "tutor": "Fernanda",
-      "pet": "Duda",
-      "telefone": "(85) 981223344",
-      "servico": "Vacina"
-    },
-    {
-      "id": "a010",
-      "data": "2026-02-08",
-      "hora": "12:30",
-      "tutor": "Rafael",
-      "pet": "Bob",
-      "telefone": "(85) 980112233",
-      "servico": "Ração"
-    },
-    {
       "id": "a011",
       "data": "2026-02-09",
       "hora": "08:00",
@@ -118,15 +55,6 @@
       "servico": "Tosa"
     },
     {
-      "id": "a013",
-      "data": "2026-02-09",
-      "hora": "09:00",
-      "tutor": "Sofia",
-      "pet": "Zeus",
-      "telefone": "(85) 985776655",
-      "servico": "Consulta"
-    },
-    {
       "id": "a014",
       "data": "2026-02-09",
       "hora": "09:30",
@@ -134,15 +62,6 @@
       "pet": "Maya",
       "telefone": "(85) 984665544",
       "servico": "Vacina"
-    },
-    {
-      "id": "a015",
-      "data": "2026-02-09",
-      "hora": "10:00",
-      "tutor": "Beatriz",
-      "pet": "Toby",
-      "telefone": "(85) 983554433",
-      "servico": "Ração"
     },
     {
       "id": "a016",
@@ -154,15 +73,6 @@
       "servico": "Banho"
     },
     {
-      "id": "a017",
-      "data": "2026-02-09",
-      "hora": "11:00",
-      "tutor": "Helena",
-      "pet": "Simba",
-      "telefone": "(85) 981332211",
-      "servico": "Tosa"
-    },
-    {
       "id": "a018",
       "data": "2026-02-09",
       "hora": "11:30",
@@ -170,24 +80,6 @@
       "pet": "Lola",
       "telefone": "(85) 980221100",
       "servico": "Consulta"
-    },
-    {
-      "id": "a019",
-      "data": "2026-02-09",
-      "hora": "12:00",
-      "tutor": "Camila",
-      "pet": "Fred",
-      "telefone": "(85) 979110099",
-      "servico": "Vacina"
-    },
-    {
-      "id": "a020",
-      "data": "2026-02-09",
-      "hora": "12:30",
-      "tutor": "André",
-      "pet": "Bela",
-      "telefone": "(85) 978009988",
-      "servico": "Ração"
     },
     {
       "id": "a021",
