@@ -109,24 +109,6 @@
       "servico": "Vacina"
     },
     {
-      "id": "a025",
-      "data": "2026-02-10",
-      "hora": "10:00",
-      "tutor": "Roberta",
-      "pet": "Zeca",
-      "telefone": "(85) 973554433",
-      "servico": "Ração"
-    },
-    {
-      "id": "a026",
-      "data": "2026-02-10",
-      "hora": "10:30",
-      "tutor": "Daniel",
-      "pet": "Bolt",
-      "telefone": "(85) 972443322",
-      "servico": "Banho"
-    },
-    {
       "id": "a027",
       "data": "2026-02-10",
       "hora": "11:00",
@@ -143,15 +125,6 @@
       "pet": "Ozzy",
       "telefone": "(85) 970221100",
       "servico": "Consulta"
-    },
-    {
-      "id": "a030",
-      "data": "2026-02-10",
-      "hora": "12:30",
-      "tutor": "Marcela",
-      "pet": "Chico",
-      "telefone": "(85) 968009988",
-      "servico": "Ração"
     },
     {
       "id": "a031",

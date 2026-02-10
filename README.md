@@ -7,7 +7,7 @@
 ## :dart: Desafio
 
 - Javascript
-- Criar, Ler, Editar e Apagar Itens da lista de despesas.
+- Criar, Ler e Apagar agendamentos filtrando pela data selecionada.
 - criação de API
 - uso de API
 - webpack
@@ -19,16 +19,20 @@
 - pseudo-class e pseudo-elements;
 - Formulários HTML;
 - Input de texto;
-- Estilização de inputs com CSS;
+- Estilização de inputs com CSS3;
 - Input de data;
-- Estilização de formulários com CSS;
+- Estilização de formulários com CSS3;
 
 ## :hammer_and_wrench: Tecnologias
 
-- HTML;
-- CSS;
-- Javascript
-- Git e Github;
+- HTML5
+- CSS3 (com abordagem mobile-first e responsividade)
+- JavaScript (ES6+)
+- Webpack
+- Babel
+- Day.js
+- JSON Server (simulando uma API REST)
+- Git e Github
 
 
 ## :trophy: Neste projeto aprendi
