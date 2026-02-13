@@ -11,12 +11,28 @@ dateSelector.value = dayjs(new Date()).format("YYYY-MM-DD");
 inputDateModal.value = dayjs(new Date()).format("YYYY-MM-DD");
 inputDateModal.min = dayjs(new Date()).format("YYYY-MM-DD");
 
-// Buscar agendamentos da API
+// Buscar agendamentos (lê server.json + mescla com alterações locais)
 async function buscarAgendamentos(dataSelecionada) {
-  const response = await fetch(
-    `http://localhost:3333/schedules?data=${dataSelecionada}`,
-  );
-  const agendamentos = await response.json();
+  const resp = await fetch('/server.json');
+  const json = await resp.json();
+  let agendamentos = Array.isArray(json.schedules) ? json.schedules : [];
+
+  // mescla agendamentos salvos localmente (persistência no client)
+  const local = JSON.parse(localStorage.getItem('localSchedules') || '[]');
+  const removed = JSON.parse(localStorage.getItem('removedSchedules') || '[]');
+
+  // aplica remoções locais
+  agendamentos = agendamentos.filter(a => !removed.includes(a.id));
+
+  // adiciona locais (não duplicar ids)
+  const ids = new Set(agendamentos.map(a => a.id));
+  local.forEach(a => { if (!ids.has(a.id)) agendamentos.push(a); });
+
+  // filtra por data, se informada
+  if (dataSelecionada) {
+    agendamentos = agendamentos.filter(a => a.data === dataSelecionada);
+  }
+
   return agendamentos;
 }
 
@@ -130,12 +146,13 @@ atualizarCards(inputDateSelector.value);
 atualizarHorarios(inputDateModal.value);
 
 // Salvar novo agendamento
+// Persiste o novo agendamento apenas no cliente (localStorage)
 async function salvarAgendamento(dados) {
-  await fetch("http://localhost:3333/schedules", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(dados),
-  });
+  const local = JSON.parse(localStorage.getItem('localSchedules') || '[]');
+  const id = Date.now().toString(36);
+  const novo = Object.assign({ id }, dados);
+  local.push(novo);
+  localStorage.setItem('localSchedules', JSON.stringify(local));
 }
 
 // Captura envio do formulário
@@ -180,10 +197,16 @@ formAgendamento.addEventListener("submit", async (e) => {
   document.getElementById("modal").style.display = "none";
 });
 
+// Remove agendamento localmente (marca remoção em localStorage)
 async function removerAgendamento(id, dataSelecionada) {
-  await fetch(`http://localhost:3333/schedules/${id}`, {
-    method: "DELETE",
-  });
+  const removed = JSON.parse(localStorage.getItem('removedSchedules') || '[]');
+  if (!removed.includes(id)) removed.push(id);
+  localStorage.setItem('removedSchedules', JSON.stringify(removed));
+
+  // também remove de localSchedules caso exista
+  const local = JSON.parse(localStorage.getItem('localSchedules') || '[]');
+  const filtered = local.filter(a => a.id !== id);
+  localStorage.setItem('localSchedules', JSON.stringify(filtered));
 
   // Atualiza os cards e horários depois da remoção
   atualizarCards(dataSelecionada);
