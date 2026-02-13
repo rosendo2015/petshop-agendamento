@@ -14,8 +14,7 @@ inputDateModal.min = dayjs(new Date()).format("YYYY-MM-DD");
 // Buscar agendamentos (lê server.json + mescla com alterações locais)
 async function buscarAgendamentos(dataSelecionada) {
   const resp = await fetch('http://localhost:3333/schedules');
-  const json = await resp.json();
-  let agendamentos = Array.isArray(json.schedules) ? json.schedules : [];
+  let agendamentos = await resp.json();
 
   // mescla agendamentos salvos localmente (persistência no client)
   const local = JSON.parse(localStorage.getItem('localSchedules') || '[]');
