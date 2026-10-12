@@ -1,0 +1,103 @@
+{
+  "schedules": [
+    {
+      "id": "id1000",
+      "data": "2026-10-12",
+      "hora": "14:00",
+      "tutor": "Junior",
+      "pet": "Tigrero",
+      "telefone": "(85) 9913264220",
+      "servico": "Banho"
+    },
+    {
+      "id": "id1001",
+      "data": "2026-10-12",
+      "hora": "08:00",
+      "tutor": "Maria",
+      "pet": "Bolinha",
+      "telefone": "(85) 988112233",
+      "servico": "Banho"
+    },
+    {
+      "id": "id1002",
+      "data": "2026-10-12",
+      "hora": "09:30",
+      "tutor": "Carlos",
+      "pet": "Rex",
+      "telefone": "(85) 987654321",
+      "servico": "Tosa"
+    },
+    {
+      "id": "id1003",
+      "data": "2026-10-12",
+      "hora": "10:15",
+      "tutor": "Fernanda",
+      "pet": "Luna",
+      "telefone": "(85) 991234567",
+      "servico": "Banho"
+    },
+    {
+      "id": "id1004",
+      "data": "2026-10-12",
+      "hora": "11:00",
+      "tutor": "Roberto",
+      "pet": "Thor",
+      "telefone": "(85) 992345678",
+      "servico": "Banho e Tosa"
+    },
+    {
+      "id": "id1005",
+      "data": "2026-10-12",
+      "hora": "13:00",
+      "tutor": "Juliana",
+      "pet": "Mel",
+      "telefone": "(85) 993456789",
+      "servico": "Banho"
+    },
+    {
+      "id": "id1006",
+      "data": "2026-10-12",
+      "hora": "15:00",
+      "tutor": "André",
+      "pet": "Bob",
+      "telefone": "(85) 994567890",
+      "servico": "Tosa"
+    },
+    {
+      "id": "id1007",
+      "data": "2026-10-12",
+      "hora": "16:30",
+      "tutor": "Patrícia",
+      "pet": "Nina",
+      "telefone": "(85) 995678901",
+      "servico": "Banho"
+    },
+    {
+      "id": "id1008",
+      "data": "2026-10-12",
+      "hora": "18:00",
+      "tutor": "Marcelo",
+      "pet": "Spike",
+      "telefone": "(85) 996789012",
+      "servico": "Banho e Tosa"
+    },
+    {
+      "id": "id1009",
+      "data": "2026-10-12",
+      "hora": "19:30",
+      "tutor": "Camila",
+      "pet": "Bidu",
+      "telefone": "(85) 997890123",
+      "servico": "Banho"
+    },
+    {
+      "id": "id1010",
+      "data": "2026-10-12",
+      "hora": "21:00",
+      "tutor": "Eduardo",
+      "pet": "Fofinho",
+      "telefone": "(85) 998901234",
+      "servico": "Tosa"
+    }
+  ]
+}

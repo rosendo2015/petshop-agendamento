@@ -13,12 +13,36 @@ inputDateModal.min = dayjs(new Date()).format("YYYY-MM-DD");
 
 // Buscar agendamentos (lê server.json + mescla com alterações locais)
 async function buscarAgendamentos(dataSelecionada) {
-  const resp = await fetch('http://localhost:3333/schedules');
-  let agendamentos = await resp.json();
+  let agendamentos = [];
+  
+  try {
+    // Tenta buscar do servidor JSON
+    const resp = await fetch('http://localhost:3333/schedules');
+    if (resp.ok) {
+      agendamentos = await resp.json();
+    } else {
+      throw new Error('Servidor JSON retornou erro');
+    }
+  } catch (error) {
+    console.log('Servidor JSON não disponível, usando dados locais do server.json');
+    // Fallback: tentamos buscar do server.json na pasta public
+    try {
+      const resp = await fetch('./server.json');
+      if (resp.ok) {
+        const data = await resp.json();
+        agendamentos = data.schedules || data;
+      }
+    } catch (fallbackError) {
+      console.log('Não foi possível carregar dados de server.json local');
+      // Se nada der certo, retornamos apenas os agendamentos locais
+      agendamentos = [];
+    }
+  }
 
   // mescla agendamentos salvos localmente (persistência no client)
   const local = JSON.parse(localStorage.getItem('localSchedules') || '[]');
   const removed = JSON.parse(localStorage.getItem('removedSchedules') || '[]');
+  console.log(removed)
 
   // aplica remoções locais
   agendamentos = agendamentos.filter(a => !removed.includes(a.id));
