@@ -30,6 +30,10 @@ module.exports = {
           from: path.resolve(__dirname, "src", "assets"),
           to: path.resolve(__dirname, "public", "src", "assets"),
         },
+        {
+          from: path.resolve(__dirname, "server.json"),
+          to: path.resolve(__dirname, "public", "server.json"),
+        },
       ],
     }),
   ],

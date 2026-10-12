@@ -27,7 +27,9 @@ async function buscarAgendamentos(dataSelecionada) {
     console.log('Servidor JSON não disponível, usando dados locais do server.json');
     // Fallback: tentamos buscar do server.json na pasta public
     try {
-      const resp = await fetch('./server.json');
+      // Usa caminho absoluto para funcionar em qualquer ambiente
+      const baseUrl = window.location.origin || '';
+      const resp = await fetch(baseUrl + '/server.json');
       if (resp.ok) {
         const data = await resp.json();
         agendamentos = data.schedules || data;
